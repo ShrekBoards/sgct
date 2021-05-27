@@ -273,9 +273,9 @@ private static int mixColors(int color0, int color1, int mul1, int mul2, int div
  public static int c565to888(int c) {
 	
 		
-	 int ret = 0xFF<<24 | cc58[ c >> 11        ] << 16	// red
-			 | cc68[ c >>  5 & 0x3f ] <<  8	// green
-			 | cc58[ c       & 0x1f ];		// blue
+ int ret =  (c == 0 ? 0 : 0xff) <<24 | (cc58[ c >> 11        ] << 16)	// red
+			 | (cc68[ c >>  5 & 0x3f ] <<  8)// green
+			 | (cc58[ c       & 0x1f ] );		// blue
 
 
 	 return ret;
